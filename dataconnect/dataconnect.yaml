@@ -1,0 +1,12 @@
+specVersion: "v1beta"
+serviceId: "pocket_fm_web"
+location: "us-central1"
+schema:
+  source: "./schema"
+  datasource:
+    postgresql:
+      database: "fdcdb"
+      cloudSql:
+        instanceId: "pocket_fm_web-fdc"
+      # schemaValidation: "COMPATIBLE"
+connectorDirs: ["./connector"]
