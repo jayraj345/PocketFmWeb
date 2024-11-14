@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:pocket_fm_web/view/dashboard_screen.dart/analytics_widget.dart';
 import 'package:pocket_fm_web/view/dashboard_screen.dart/content_widget.dart';
 import 'package:pocket_fm_web/view/dashboard_screen.dart/controller/dashboard_controller.dart';
 import 'package:pocket_fm_web/helpar/colors.dart';
@@ -96,7 +97,9 @@ class DashBoardScreen extends StatelessWidget {
                           Text(
                             "Dashbord",
                             style: TextStyle(
-                              color: primaryColor,
+                              color: controller.currentIndex.value == 0
+                                  ? primaryColor
+                                  : Color(0xFF999999),
                               fontFamily: FontFamily.openSansMedium,
                               fontSize: 12.sp,
                             ),
@@ -122,7 +125,9 @@ class DashBoardScreen extends StatelessWidget {
                           Text(
                             "Analytics",
                             style: TextStyle(
-                              color: Color(0xFF999999),
+                              color: controller.currentIndex.value == 1
+                                  ? primaryColor
+                                  : Color(0xFF999999),
                               fontFamily: FontFamily.openSansMedium,
                               fontSize: 12.sp,
                             ),
@@ -148,7 +153,9 @@ class DashBoardScreen extends StatelessWidget {
                           Text(
                             "Earning",
                             style: TextStyle(
-                              color: Color(0xFF999999),
+                              color: controller.currentIndex.value == 2
+                                  ? primaryColor
+                                  : Color(0xFF999999),
                               fontFamily: FontFamily.openSansMedium,
                               fontSize: 12.sp,
                             ),
@@ -174,7 +181,9 @@ class DashBoardScreen extends StatelessWidget {
                           Text(
                             "Content",
                             style: TextStyle(
-                              color: Color(0xFF999999),
+                              color: controller.currentIndex.value == 3
+                                  ? primaryColor
+                                  : Color(0xFF999999),
                               fontFamily: FontFamily.openSansMedium,
                               fontSize: 12.sp,
                             ),
@@ -200,7 +209,9 @@ class DashBoardScreen extends StatelessWidget {
                           Text(
                             "Support",
                             style: TextStyle(
-                              color: Color(0xFF999999),
+                              color: controller.currentIndex.value == 4
+                                  ? primaryColor
+                                  : Color(0xFF999999),
                               fontFamily: FontFamily.openSansMedium,
                               fontSize: 12.sp,
                             ),
@@ -226,7 +237,9 @@ class DashBoardScreen extends StatelessWidget {
                           Text(
                             "Settings",
                             style: TextStyle(
-                              color: Color(0xFF999999),
+                              color: controller.currentIndex.value == 5
+                                  ? primaryColor
+                                  : Color(0xFF999999),
                               fontFamily: FontFamily.openSansMedium,
                               fontSize: 12.sp,
                             ),
@@ -252,7 +265,9 @@ class DashBoardScreen extends StatelessWidget {
                           Text(
                             "Logout",
                             style: TextStyle(
-                              color: Color(0xFF999999),
+                              color: controller.currentIndex.value == 6
+                                  ? primaryColor
+                                  : Color(0xFF999999),
                               fontFamily: FontFamily.openSansMedium,
                               fontSize: 12.sp,
                             ),
@@ -268,13 +283,16 @@ class DashBoardScreen extends StatelessWidget {
               Expanded(
                 child: Scaffold(
                   body: controller.currentIndex.value == 0
-                      // ? CategoryScreen()
                       ? DashBoardWidget()
-                      : controller.currentIndex.value == 3
-                          ? ContentWidget()
-                          : controller.currentIndex.value == 5
-                              ? SettingWidget()
-                              : Container(),
+                      : controller.currentIndex.value == 1
+                          ? AnalyticsWidget()
+                          : controller.currentIndex.value == 3
+                              ? ContentWidget()
+                              : controller.currentIndex.value == 5
+                                  ? SettingWidget()
+                                  : Container(
+                                      color: Colors.black,
+                                    ),
                 ),
               ),
             ],
