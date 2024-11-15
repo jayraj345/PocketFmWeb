@@ -8,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:pocket_fm_web/helpar/colors.dart';
 import 'package:pocket_fm_web/helpar/fontfamily.dart';
 import 'package:pocket_fm_web/helpar/textfield_widget.dart';
+import 'package:pocket_fm_web/view/category/add_category_screen.dart';
 import 'package:pocket_fm_web/view/dashboard_screen.dart/chart_widget.dart';
 import 'package:velocity_x/velocity_x.dart';
 
@@ -51,36 +52,41 @@ class DashBoardWidget extends StatelessWidget {
                   ),
                 ),
                 20.w.widthBox,
-                Container(
-                  height: 36.sp,
-                  width: 148.sp,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        Icons.add,
-                        color: Colors.white,
-                        size: 15.sp,
-                      ),
-                      5.w.widthBox,
-                      Text(
-                        "Create new",
-                        style: TextStyle(
+                InkWell(
+                  onTap: () {
+                    Get.to(AddCategoryScreen());
+                  },
+                  child: Container(
+                    height: 36.sp,
+                    width: 148.sp,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Icon(
+                          Icons.add,
                           color: Colors.white,
+                          size: 15.sp,
                         ),
-                      ),
-                    ],
-                  ),
-                  decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [
-                        primaryColor.withOpacity(0.5),
-                        primaryColor,
+                        5.w.widthBox,
+                        Text(
+                          "Create new",
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        ),
                       ],
-                      begin: Alignment.topRight,
-                      end: Alignment.bottomLeft,
                     ),
-                    borderRadius: BorderRadius.circular(5.sp),
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        colors: [
+                          primaryColor.withOpacity(0.5),
+                          primaryColor,
+                        ],
+                        begin: Alignment.topRight,
+                        end: Alignment.bottomLeft,
+                      ),
+                      borderRadius: BorderRadius.circular(5.sp),
+                    ),
                   ),
                 ),
                 20.w.widthBox,

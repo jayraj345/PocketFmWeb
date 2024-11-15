@@ -92,6 +92,9 @@ class DashBoardScreen extends StatelessWidget {
                             "assets/dashboard.png",
                             height: 17.sp,
                             width: 17.sp,
+                            color: controller.currentIndex.value == 0
+                                ? primaryColor
+                                : Color(0xFF999999),
                           ),
                           12.w.widthBox,
                           Text(
@@ -120,6 +123,9 @@ class DashBoardScreen extends StatelessWidget {
                             "assets/Analytics.png",
                             height: 17.sp,
                             width: 17.sp,
+                            color: controller.currentIndex.value == 1
+                                ? primaryColor
+                                : Color(0xFF999999),
                           ),
                           14.w.widthBox,
                           Text(
@@ -148,6 +154,9 @@ class DashBoardScreen extends StatelessWidget {
                             "assets/Earning.png",
                             height: 17.sp,
                             width: 17.sp,
+                            color: controller.currentIndex.value == 2
+                                ? primaryColor
+                                : Color(0xFF999999),
                           ),
                           15.w.widthBox,
                           Text(
@@ -176,6 +185,9 @@ class DashBoardScreen extends StatelessWidget {
                             "assets/vuesax linear headphone.png",
                             height: 17.sp,
                             width: 17.sp,
+                            color: controller.currentIndex.value == 3
+                                ? primaryColor
+                                : Color(0xFF999999),
                           ),
                           15.w.widthBox,
                           Text(
@@ -204,6 +216,9 @@ class DashBoardScreen extends StatelessWidget {
                             "assets/Support.png",
                             height: 17.sp,
                             width: 17.sp,
+                            color: controller.currentIndex.value == 4
+                                ? primaryColor
+                                : Color(0xFF999999),
                           ),
                           14.w.widthBox,
                           Text(
@@ -232,6 +247,9 @@ class DashBoardScreen extends StatelessWidget {
                             "assets/setting.png",
                             height: 17.sp,
                             width: 17.sp,
+                            color: controller.currentIndex.value == 5
+                                ? primaryColor
+                                : Color(0xFF999999),
                           ),
                           14.w.widthBox,
                           Text(
@@ -260,6 +278,9 @@ class DashBoardScreen extends StatelessWidget {
                             "assets/logout.png",
                             height: 17.sp,
                             width: 17.sp,
+                            color: controller.currentIndex.value == 6
+                                ? primaryColor
+                                : Color(0xFF999999),
                           ),
                           14.w.widthBox,
                           Text(
