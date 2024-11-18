@@ -2,8 +2,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:pocket_fm_web/helpar/fontfamily.dart';
-import 'package:velocity_x/velocity_x.dart';
+import 'package:pocket_fm_web/view/dashboard_screen.dart/controller/theam_controller.dart';
 
 class TextFieldWidget extends StatelessWidget {
   String? name;
@@ -25,6 +26,8 @@ class TextFieldWidget extends StatelessWidget {
     this.suffixIcon,
   });
 
+  ThemeController themeController = Get.find();
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -35,7 +38,8 @@ class TextFieldWidget extends StatelessWidget {
           style: TextStyle(
             fontSize: 12.sp,
             fontFamily: FontFamily.openSansBold,
-            color: Colors.white,
+            color:
+                themeController.isDarkMode.value ? Colors.white : Colors.black,
           ),
         ),
         Container(
@@ -56,7 +60,9 @@ class TextFieldWidget extends StatelessWidget {
               errorBorder: OutlineInputBorder(borderSide: BorderSide.none),
               hintText: hintText ?? "",
               hintStyle: TextStyle(
-                color: Color(0xFF77808D),
+                color: themeController.isDarkMode.value
+                    ? Color(0xFF77808D)
+                    : Colors.white.withOpacity(0.50),
                 fontFamily: FontFamily.openSansRegular,
                 fontSize: 14.sp,
               ),
@@ -65,7 +71,9 @@ class TextFieldWidget extends StatelessWidget {
             ),
           ),
           decoration: BoxDecoration(
-            color: Color(0xFF111217),
+            color: themeController.isDarkMode.value
+                ? Color(0xFF111217)
+                : Colors.grey,
             borderRadius: BorderRadius.circular(5),
             // border: Border.all(
             //   color: Color(0xFFE6EBF2),

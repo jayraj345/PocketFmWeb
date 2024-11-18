@@ -5,6 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:pocket_fm_web/helpar/route_helpar.dart';
 import 'package:pocket_fm_web/helpar/supabase_info.dart';
+import 'package:pocket_fm_web/view/dashboard_screen.dart/controller/theam_controller.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 SharedPreferences? prefer;
@@ -14,7 +15,7 @@ Future<void> main() async {
   prefer = await SharedPreferences.getInstance();
 
   SupabaseConfig.initialize();
-
+  ThemeController themeController = Get.put(ThemeController());
   runApp(
     ScreenUtilInit(
       designSize: Size(1280, 832),
@@ -26,6 +27,8 @@ Future<void> main() async {
               child: child!,
             );
           },
+          darkTheme: ThemeData.dark(),
+          themeMode: Get.find<ThemeController>().theme,
           initialRoute: (prefer?.getBool("isLogin") ?? false)
               ? Routes.dashBoardScreen
               : Routes.initialRoute,
